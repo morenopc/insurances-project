@@ -3,3 +3,4 @@ venv
 staticfiles
 media
 *.sqlite3
+.env
