@@ -5,6 +5,10 @@
         "profile_name": "zappa", 
         "project_name": "task", 
         "runtime": "python2.7", 
-        "s3_bucket": "zappadev-code"
+        "s3_bucket": "zappadev-code",
+        "vpc_config" : {
+            "SubnetIds": [ "subnet-4011d14f", "subnet-c5b69ca1", "subnet-0671085b", "subnet-2b6e2b04", "subnet-68d09157", "subnet-1190925a" ], // use the private subnet
+            "SecurityGroupIds": [ "sg-3f9a1748", "sg-44e97c33" ]
+        }
     }
 }
