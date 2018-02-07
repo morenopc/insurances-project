@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "aws_region": "us-east-1", 
+        "django_settings": "insurances.settings", 
+        "profile_name": "zappa", 
+        "project_name": "task", 
+        "runtime": "python2.7", 
+        "s3_bucket": "zappadev-code"
+    }
+}
