@@ -22,10 +22,10 @@
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">{% block brand %}Britecore{% endblock brand %}</a>
     </nav>
 
+    {% block content %}
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          {% block sidebar %}
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
@@ -36,25 +36,25 @@
               </li>
             </ul>
           </div>
-          {% endblock sidebar %}
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
           </div>
-          {% block content %}
           <h3>Intuitive Web Solutions</h3>
           <div>Risk types</div>
-          {% endblock content %}
         </main>
       </div>
     </div>
-
+    {% endblock content %}
+    <!-- Javascript -->
     <!-- Icons -->
     <script src="{% static 'js/feather.min.js' %}"></script>
     <script>
       feather.replace()
     </script>
+    <script src="{% static 'js/vue.min.js' %}"></script>
+    {% block javascript %}{% endblock javascript %}
   </body>
 </html>
