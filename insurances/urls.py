@@ -28,6 +28,8 @@ urlpatterns = [
 
 # Let's django serve media files
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Django Zappa Workaround
+urlpatterns += static('/dev/' + settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # django REST framework
 urlpatterns += [
