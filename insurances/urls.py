@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from risks.views import HomeTemplateView
+from services.v1 import urls as urls_v1
 
 
 urlpatterns = [
@@ -27,3 +28,8 @@ urlpatterns = [
 
 # Let's django serve media files
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# django REST framework
+urlpatterns += [
+	url(r'^api/v1/', include(urls_v1))
+]
