@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
+from rest_framework import viewsets
 from risks.models import Risk
 from risks.serializers import RiskModelSerializer
-from rest_framework import viewsets
 
 
 class RiskModelViewSet(viewsets.ModelViewSet):

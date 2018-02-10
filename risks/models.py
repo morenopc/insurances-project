@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import models
+from eav.decorators import register_eav
 
 
+@register_eav()
 class Risk(models.Model):
     """Risk static fields"""
     name = models.CharField(max_length=32, blank=False, default="automobile")
