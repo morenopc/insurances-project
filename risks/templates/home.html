@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container-fluid">
-  {% verbatim vue %}
   <div class="row">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
@@ -23,6 +23,8 @@
       </div>
       <h3>Risks</h3>
       <div id="app">
+        <img src="{% static 'img/loading-icon.gif' %}" v-show="risks.length == 0" />
+        {% verbatim vue %}
         <div v-for="risk in risks">
           <h4>{{ risk.name }}</h4>
           <form v-for="eav in risk.eav">
@@ -53,5 +55,5 @@
 {% endblock content %}
 
 {% block javascript %}
-<script src="media/js/home.vue.js"></script>
+<script src="{% static 'js/home.vue.js' %}"></script>
 {% endblock javascript %}
