@@ -1,4 +1,4 @@
-var apiURL = '/api/v1/risks/';
+var apiURL = 'api/v1/risks/';
 var app = new Vue({
   el: "#app",
 
