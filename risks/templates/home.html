@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="vue-app" class="container-fluid">
+<div class="container-fluid">
+  {% verbatim vue %}
   <div class="row">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
@@ -23,15 +24,24 @@
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-      {% verbatim vue %}
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-        <h1 class="h2">{{ current }}</h1>
+        <h1 class="h2">Dashboard</h1>
       </div>
-      <h3>{{ subtitle }}</h3>
-      <div>{{ message }}</div>
-      {% endverbatim vue %}
+      <h3>Intuitive Web Solutions</h3>
+      <div id="app">
+        <p>{{ risks | json }}</p>
+        <div v-for="risk in risks">
+          <h4>{{ risk.name }}</h4>
+          <form v-for="eav in risk.eav">
+            <div class="form-group">
+              {{ eav.attribute.name }}: <input class="form-control" name="{{ eav.attribute.slug }}" type="{{ eav.attribute.datatype }}">
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
   </div>
+  {% endverbatim vue %}
 </div>
 {% endblock content %}
 
