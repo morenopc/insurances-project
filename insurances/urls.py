@@ -29,9 +29,10 @@ urlpatterns = [
 # Let's django serve media files
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # Django Zappa Workaround
-urlpatterns += static('/dev' + settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(
+    '/dev' + settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # django REST framework
 urlpatterns += [
-	url(r'^api/v1/', include(urls_v1))
+    url(r'^api/v1/', include(urls_v1))
 ]
