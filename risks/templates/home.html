@@ -10,13 +10,7 @@
           <li class="nav-item">
             <a class="nav-link active" href="#">
               <span data-feather="home"></span>
-              Dashboard <span class="sr-only" v-if="dashboard">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file"></span>
-              Risk types <span class="sr-only" v-if="risk_types">(current)</span>
+              Dashboard <span class="sr-only">(current)</span>
             </a>
           </li>
         </ul>
@@ -27,14 +21,27 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
       </div>
-      <h3>Intuitive Web Solutions</h3>
+      <h3>Risks</h3>
       <div id="app">
-        <p>{{ risks | json }}</p>
         <div v-for="risk in risks">
           <h4>{{ risk.name }}</h4>
           <form v-for="eav in risk.eav">
-            <div class="form-group">
-              {{ eav.attribute.name }}: <input class="form-control" name="{{ eav.attribute.slug }}" type="{{ eav.attribute.datatype }}">
+            <div class="form-group" v-if="eav.attribute.datatype === 'enum'">
+              <label>{{ eav.attribute.name }}</label>
+              <select class="form-control">
+                <option v-for="enum_option in eav.attribute.enum_group.enums">{{ enum_option.value }}</option>
+              </select>
+            </div>
+            <div class="form-group" v-else>
+              {{ eav.attribute.name }}
+              <input class="form-control"
+                v-if="eav.attribute.datatype === 'date'" 
+                :name="eav.attribute.slug"
+                type="date">
+              <input class="form-control"
+                v-else
+                :name="eav.attribute.slug" 
+                :type="(eav.value_float || eav.value_int) ? 'number' : 'text'">
             </div>
           </form>
         </div>
