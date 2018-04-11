@@ -2,6 +2,10 @@
 
 Product Development Project
 
+## Model Classes Relationship Diagram
+
+![models class](https://github.com/morenopc/insurances-project/raw/master/media/img/2018-02-BriteCore-entity-relationship-diagram.jpg "Model Classes Relationship Diagram")
+
 ## Issue
 
 To work mostly with property-based insurance, the data model is pretty rigid. The data model assumes that all risks are properties and have addresses. This makes it difficult to work with different forms of insurance like Automobile Policies, Cyber Liability Coverage (protection against hacking), or Prize Insurance (if someone gets a $1 million hole-in-one prize at a golf tournament, the golf course doesn't pay it, they have an insurance policy to cover them).
