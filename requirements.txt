@@ -7,7 +7,7 @@ certifi==2018.1.18
 cfn-flip==1.0.0
 chardet==3.0.4
 click==6.7
-Django==1.11.10
+Django==1.11.29
 -e git://github.com/sromero84/django-eav.git@3879dbde2071eed3e1c9d88b5eb063947ae63c12#egg=django_eav
 django-storages==1.6.5
 djangorestframework==3.7.7
