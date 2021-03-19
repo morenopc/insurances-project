@@ -10,7 +10,7 @@ click==6.7
 Django==1.11.10
 -e git://github.com/sromero84/django-eav.git@3879dbde2071eed3e1c9d88b5eb063947ae63c12#egg=django_eav
 django-storages==1.6.5
-djangorestframework==3.7.7
+djangorestframework==3.11.2
 docutils==0.14
 durationpy==0.5
 future==0.16.0
